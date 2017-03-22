@@ -45,9 +45,9 @@ while True:
 				digit_list = [] #create a list to store the numbers found in the comment
 				#comment_body_list = comment.body.split(" ")#split the body of the comment across spaces to separate it into a list of words
 				reply_str = "" # prepare a string to hold the reply
-				match_list = re.findall("\!-?\d+|\!recent|\!TAZ|\!Tostino|\!Switch|\!noadvice",comment.body) 
+				match_list = re.findall("[eE]p(?<=isode|.)?\ (?<=#)?(\d+)|(\!recent)|(\!TAZ)|(\!Tostino)|(\!Switch)|(\!noadvice)",comment.body).group() 
 				for match in match_list: # for each word in the comment
-					if is_int(match[1:]):# if the match iis a number
+					if is_int(match[1:]):# if the match is a number
 						digit_list.append(str(abs(int(match[1:])))) # add the number to the list of episode numbers
 					elif match=="!recent":
 						feed = get_main_list(feedparser.parse("http://mbmbam.libsyn.com/rss"))
@@ -94,15 +94,10 @@ while True:
 	except (Exception, RuntimeError) as e:
 		now = time.strftime("%c")
 		err_log = open("errlog","r+")
-		err_log.write("!!!\nSomething went wrong at :" + now + "\n")
+		err_log.write("!!!\nSomething went wrong at: " + now + "\n")
 		err_log.write(str(type(e)))
 		err_log.write("\n!!!\n\n")
 		err_log.close()
 		print "something went wrong:\n", type(e),"\n",e
 	else:
 		time.sleep(5) #sleep for 5 seconds
-
-
-
-
-
