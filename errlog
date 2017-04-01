@@ -1,0 +1,33 @@
+Error at Sat Apr  1 17:34:42 2017:
+Error at Sat Apr  1 17:36:25 2017:
+<type 'exceptions.AttributeError'>
+'str' object has no attribute 'formt'
+<type 'exceptions.AttributeError'>
+file: mbmbamboto.py
+line number: 93
+
+----------
+Error at Sat Apr  1 17:42:35 2017:
+<type 'exceptions.NameError'>
+global name 'get_main_list' is not defined
+<type 'exceptions.NameError'>
+file: mbmbamboto.py
+line number: 87
+
+----------
+Error at Sat Apr  1 17:49:56 2017:
+<type 'exceptions.TypeError'>
+cannot concatenate 'str' and 'int' objects
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 87
+
+----------
+Error at Sat Apr  1 17:57:18 2017:
+<type 'exceptions.IndexError'>
+list index out of range
+<type 'exceptions.IndexError'>
+file: mbmbamboto.py
+line number: 109
+
+----------
