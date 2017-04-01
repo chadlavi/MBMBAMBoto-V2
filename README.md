@@ -4,7 +4,7 @@ This is a reddit bot which will fetch links to episodes of the [My Brother, My B
 
 The bot listens to each comment, attempting to match the regular expression `[eE][pP].?\ #?(\d+)|[eE]pisode\ #?(\d+)|\!(\d+)|(\!latest)|(\!last)|(\!recent)|(![tT]roll)|([tT]rolls?\ 2)|(\!TAZ)|(\!Tostino)|(\!Switch)|(\!noadvice)`. For each match, it either uses the digit captured to fetch to the associated episode from the show's rss feed, or uses they keyword captured to fetch a special episode. 
 
-## UBUNTU SETUP ## 
+## UBUNTU SETUP  
 Copy [ubuntu-setup.sh](https://bitbucket.org/chadlavimoniere/mbmbamboto-v2/raw/master/ubuntu_setup.sh) into a bash script and run it. It will prompt you for needed information, then start the script running in a new tmux session.
 
 Note that you'll need these pieces of info for the setup:
@@ -23,5 +23,5 @@ You can see an example of the required `praw.ini` file in the `example_praw.ini`
 
 Attach to the session with `tmux a -t bot-running`.
 
-## THANKS! ##  
+## THANKS!  
 This is a fork of an original version of the bot written by Reddit user [/u/Quip_Qwop](https://bitbucket.org/Quip_Qwop/).
