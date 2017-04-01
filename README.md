@@ -8,4 +8,18 @@ Say someone comments "!100". The bot matches "!100" with the regular expression,
 **UBUNTU SETUP**  
 Copy [ubuntu-setup.sh](https://bitbucket.org/chadlavimoniere/mbmbamboto-v2/raw/master/ubuntu_setup.sh) into a bash script and run it. It will prompt you for needed information, then start the script running in a new tmux session.
 
+Note that you'll need these pieces of info for the setup:
+
+* Your name (for git commits) 
+* Your email address (for git commits) 
+* Your bitbucket username 
+* Your bitbucket password
+* your script's client id 
+* your script's client secret 
+* your bot user's username 
+* your bot user's password 
+* a string to provide for your bot's user agent
+
+You can see an example of the required `praw.ini` file in the `example_praw.ini` file.
+
 Attach to the session with `tmux a -t bot-running`.
