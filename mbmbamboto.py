@@ -1,3 +1,6 @@
+# SUBREDDIT-SPECIFIC VARIABLES
+subreddit='mbmbam'
+
 import os, sys
 import praw
 import time
@@ -66,7 +69,7 @@ while True:
 		with open("idfile", "r+") as id_file: 
 			id_file_string = id_file.read()
 		id_file_list = id_file_string.split("\n") 
-		full_comments = r.subreddit('mbmbam').stream.comments() 
+		full_comments = r.subreddit(subreddit).stream.comments() 
 		for comment in full_comments: 
 			if str(comment.id) not in id_file_list and str(comment.author) != 'mbmbamboto': 
 				with open("idfile", "a+") as id_file: 
@@ -77,7 +80,7 @@ while True:
 				if len(match_list) > 0:
 					print "\n~~~~~~~~~~~~~\n"
 					print "comment {0}: \"{1}\"".format(str(comment.id), str(comment.body)) 
-					print "comment permalink: https://www.reddit.com/r/mbmbam{0}".format(str(comment.permalink(fast=True)))
+					print "comment permalink: https://www.reddit.com/r/{0}{1}".format(subreddit, str(comment.permalink(fast=True)))
 					
 				for match in match_list: 
 					
