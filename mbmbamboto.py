@@ -1,6 +1,7 @@
 # SUBREDDIT-SPECIFIC VARIABLES
 subreddit='mbmbam'
 
+from datetime import datetime
 import os, sys
 import praw
 import time
@@ -13,7 +14,8 @@ import re
 #		Troll:				Troll			351
 episode_pattern = re.compile(r"[eE][pP].?\ #?(\d+)|[eE]pisode\ #?(\d+)|\!(\d+)|(\!latest)|(\!last)|(\!recent)|(![tT]roll)|([tT]rolls?\ 2)|(\!TAZ)|(\!Tostino)|(\!Switch)|(\!noadvice)")
 def timestamp():
-	return time.strftime("%c")
+	now = datetime.now()
+	return '%s%02d%02d %02d:%02d:%02d' % (now.year, now.month, now.day, now.hour, now.minute, now.second)
 def is_int(n):
 	try:
 		int(n)
