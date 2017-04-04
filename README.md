@@ -10,7 +10,7 @@ Note that you'll need these pieces of info to set up the required `praw.ini` fil
 * your script's client secret 
 * your bot user's username 
 * your bot user's password 
-* a string to provide for your bot's user agent
+* a string to provide for your bot's user agent (NOTE: Reddit requires that the string follow the format `[script name] by [user]`, if you don't follow this format you'll get 403 errors from PRAW)
 
 You can see an example of the required `praw.ini` file in the `example_praw.ini` file.
 
