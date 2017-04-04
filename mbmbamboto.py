@@ -114,7 +114,10 @@ while True:
 							reply_str+="["+real_list[ep]["title"]+"]("+real_list[ep]["link"]+")\n\n  "
 						else:
 							try:
-								reply_str+="[" + rv_list[abs(int(ep))-1]["title"] + "](" + rv_list[abs(int(ep))-1]["link"]+")\n\n " 
+								if int(ep) == 420 or int(ep) == 69:
+									reply_str+="Nice. [" + rv_list[abs(int(ep))-1]["title"] + "](" + rv_list[abs(int(ep))-1]["link"]+")\n\n " 
+								else:
+									reply_str+="[" + rv_list[abs(int(ep))-1]["title"] + "](" + rv_list[abs(int(ep))-1]["link"]+")\n\n " 
 							except IndexError: 
 								reply_str+="Episode " + str(ep) + " doesn't exist!\n\n " 
 				if len(reply_str)>0: 
