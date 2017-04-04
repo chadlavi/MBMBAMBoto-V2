@@ -39,3 +39,11 @@ file: mbmbamboto.py
 line number: 73
 
 ----------
+Error at 20170403 16:35:33:
+<class 'prawcore.exceptions.Forbidden'>
+received 403 HTTP response
+<class 'prawcore.exceptions.Forbidden'>
+file: mbmbamboto.py
+line number: 75
+
+----------
