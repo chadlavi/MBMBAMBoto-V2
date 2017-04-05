@@ -2,17 +2,10 @@
 subreddit='mbmbam'
 
 from datetime import datetime
-import os, sys
-import praw
-import time
-import urllib
-import feedparser
-import re
-#Special eps: 	The Adventure Zone:		TAZ			213
-#		Tostinos: 			Tostinos 		262
-#		Switcharoo: 			Switch 			273
-#		Troll:				Troll			351
+import os, sys, praw, time, urllib, feedparser, re
+
 episode_pattern = re.compile(r"[eE][pP].?\ #?(\d+)|[eE]pisode\ #?(\d+)|\!(\d+)|(\!latest)|(\!last)|(\!recent)|(![tT]roll)|([tT]rolls?\ 2)|(\!TAZ)|(\!Tostino)|(\!Switch)|(\!noadvice)")
+
 def timestamp():
     now = datetime.now()
     return '%02d-%02d-%02d at %02d:%02d:%02d' % (now.year, now.month, now.day, now.hour, now.minute, now.second) + ' -- '
@@ -90,9 +83,7 @@ while True:
 					log("\n~~~~~~~~~~~~~\n")
 					log("comment {0}: \"{1}\"".format(str(comment.id), str(comment.body)))
 					log("comment permalink: https://www.reddit.com/r/{0}{1}".format(subreddit, str(comment.permalink(fast=True))))
-					
 				for match in match_list: 
-					
 					if type(match) == tuple:
 						for result in match:
 							if len(result) > 0:
@@ -131,7 +122,6 @@ while True:
 					reply_str+="-\n\n*I'm a bot. For more details see [this thread](https://www.reddit.com/r/MBMBAM/comments/62qi9c/reminder_you_can_use_the_mbmbamboto_to_quickly/).*"
 					log("my reply:\n{0}".format(str(reply_str)))
 					comment.reply(reply_str) 
-		
 	except (Exception, RuntimeError) as e:
 		exc_type, exc_obj, exc_tb = sys.exc_info()
 		fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
