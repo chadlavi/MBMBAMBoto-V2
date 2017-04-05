@@ -11,10 +11,10 @@ def timestamp():
     return '%02d-%02d-%02d at %02d:%02d:%02d' % (now.year, now.month, now.day, now.hour, now.minute, now.second) + ' -- '
 
 def log(x):
-    OF = open('logfile', 'a+')
-    msg = timestamp() + x
-    print msg
-    OF.write(msg + "\n")
+    with open('logfile', 'a+') as OF:
+    	msg = timestamp() + x
+    	print msg
+    	OF.write(msg + "\n")
 
 def is_int(n):
     try:
