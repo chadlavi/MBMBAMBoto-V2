@@ -14,8 +14,15 @@ import re
 #		Troll:				Troll			351
 episode_pattern = re.compile(r"[eE][pP].?\ #?(\d+)|[eE]pisode\ #?(\d+)|\!(\d+)|(\!latest)|(\!last)|(\!recent)|(![tT]roll)|([tT]rolls?\ 2)|(\!TAZ)|(\!Tostino)|(\!Switch)|(\!noadvice)")
 def timestamp():
-	now = datetime.now()
-	return '%s%02d%02d %02d:%02d:%02d' % (now.year, now.month, now.day, now.hour, now.minute, now.second)
+    now = datetime.now()
+    return '%02d-%02d-%02d at %02d:%02d:%02d' % (now.year, now.month, now.day, now.hour, now.minute, now.second) + ' -- '
+
+def log(x):
+    OF = open('logfile', 'a+')
+    msg = timestamp() + x
+    print msg
+    OF.write(msg + "\n")
+
 def is_int(n):
 	try:
 		int(n)
@@ -46,7 +53,7 @@ def get_numbered_eps():
 	return main_ep_lst
 
 def pick_ep(result):
-	print "result: {0}".format(str(result))
+	log("result: {0}".format(str(result)))
 	if is_int(result):
 		digit_list.append(str(abs(int(result)))) 
 	elif result in ("!recent", "!last", "!latest"):
@@ -64,10 +71,10 @@ def pick_ep(result):
 		digit_list.append('troll')
 
 r = praw.Reddit('bot') 
-print "{0} -- Signed in as {1}".format(str(timestamp()), str(r.user.me()))
+log("Signed in as {0}".format(str(r.user.me())))
 while True:
 	try:
-		print "{0} -- Beginning to listen for new comments".format(str(timestamp()))
+		log("Beginning to listen for new comments")
 		with open("idfile", "r+") as id_file: 
 			id_file_string = id_file.read()
 		id_file_list = id_file_string.split("\n") 
@@ -80,9 +87,9 @@ while True:
 				reply_str = "" 
 				match_list = episode_pattern.findall(comment.body)
 				if len(match_list) > 0:
-					print "\n~~~~~~~~~~~~~\n"
-					print "comment {0}: \"{1}\"".format(str(comment.id), str(comment.body)) 
-					print "comment permalink: https://www.reddit.com/r/{0}{1}".format(subreddit, str(comment.permalink(fast=True)))
+					log("\n~~~~~~~~~~~~~\n")
+					log("comment {0}: \"{1}\"".format(str(comment.id), str(comment.body)))
+					log("comment permalink: https://www.reddit.com/r/{0}{1}".format(subreddit, str(comment.permalink(fast=True))))
 					
 				for match in match_list: 
 					
@@ -95,7 +102,7 @@ while True:
 				if len(digit_list)>0: 
 					rv_list = get_numbered_eps() 
 					for ep in digit_list: 
-						print "Matching episode: {0}".format(str(ep))
+						log("Matching episode: {0}".format(str(ep)))
 						if ep=='troll':
 							real_list = get_all_eps()
 							reply_str+="["+real_list[351]["title"]+"]("+real_list[351]["link"]+")\n\n  "
@@ -122,7 +129,7 @@ while True:
 								reply_str+="Episode " + str(ep) + " doesn't exist!\n\n " 
 				if len(reply_str)>0: 
 					reply_str+="-\n\n*I'm a bot. For more details see [this thread](https://www.reddit.com/r/MBMBAM/comments/62qi9c/reminder_you_can_use_the_mbmbamboto_to_quickly/).*"
-					print "my reply:\n{0}".format(str(reply_str)) 
+					log("my reply:\n{0}".format(str(reply_str)))
 					comment.reply(reply_str) 
 		
 	except (Exception, RuntimeError) as e:
@@ -132,7 +139,7 @@ while True:
 			err_log.write("Error at " + timestamp() + ":\n")
 			err_log.write(str(type(e))+"\n"+str(e)+"\n"+str(exc_type)+"\nfile: "+str(fname)+"\nline number: "+str(exc_tb.tb_lineno))
 			err_log.write("\n\n----------\n")
-		print "{0} -- Something went wrong:\n{1}\n{2}\n{3}\nfile: {4}\nline number: {5}".format(str(timestamp()), str(type(e)), "\n", str(e), "\n", str(exc_type), "\nfile: ", str(fname), "\nline number: ", str(exc_tb.tb_lineno))
+		log("Something went wrong:\n{1}\n{2}\n{3}\nfile: {4}\nline number: {5}".format(str(timestamp()), str(type(e)), "\n", str(e), "\n", str(exc_type), "\nfile: ", str(fname), "\nline number: ", str(exc_tb.tb_lineno)))
 		break
 	else:
 		time.sleep(5) 
