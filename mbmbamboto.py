@@ -2,19 +2,15 @@
 subreddit='mbmbam'
 
 from datetime import datetime
-import os, sys, praw, time, urllib, feedparser, re
+import os, sys, praw, time, urllib, feedparser, re, logging
+logging.basicConfig(filename='logfile', format='%(asctime)s [%(levelname)s] %(message)s', level=logging.INFO)
+logging.getLogger().addHandler(logging.StreamHandler())
 
 episode_pattern = re.compile(r"[eE][pP].?\ #?(\d+)|[eE]pisode\ #?(\d+)|\!(\d+)|(\!latest)|(\!last)|(\!recent)|(![tT]roll)|([tT]rolls?\ 2)|(\!TAZ)|(\!Tostino)|(\!Switch)|(\!noadvice)")
 
 def timestamp():
     now = datetime.now()
     return '%02d-%02d-%02d at %02d:%02d:%02d' % (now.year, now.month, now.day, now.hour, now.minute, now.second) + ' -- '
-
-def log(x):
-    with open('logfile', 'a+') as OF:
-    	msg = timestamp() + x
-    	print msg
-    	OF.write(msg + "\n")
 
 def is_int(n):
     try:
@@ -46,7 +42,7 @@ def get_numbered_eps():
     return main_ep_lst
 
 def pick_ep(result):
-    log("result: {0}".format(str(result)))
+    logging.info("result: {0}".format(str(result)))
     if is_int(result):
         digit_list.append(str(abs(int(result)))) 
     elif result in ("!recent", "!last", "!latest"):
@@ -64,10 +60,10 @@ def pick_ep(result):
         digit_list.append('troll')
 
 r = praw.Reddit('bot') 
-log("Signed in as {0}".format(str(r.user.me())))
+logging.info("Signed in as {0}".format(str(r.user.me())))
 while True:
     try:
-        log("Beginning to listen for new comments")
+        logging.info("Beginning to listen for new comments")
         with open('idfile', 'r+') as id_file: 
             id_file_string = id_file.read()
         id_file_list = id_file_string.split("\n") 
@@ -82,9 +78,9 @@ while True:
                 match_list = episode_pattern.findall(body)
                 if len(match_list) > 0:
                     comment.upvote()
-                    log("\n~~~~~~~~~~~~~\n")
-                    log("comment {0}: \"{1}\"".format(str(comment.id), str(body)))
-                    log("comment permalink: https://www.reddit.com/r/{0}{1}".format(subreddit, str(comment.permalink(fast=True))))
+                    logging.info("\n~~~~~~~~~~~~~\n")
+                    logging.info("comment {0}: \"{1}\"".format(str(comment.id), str(body)))
+                    logging.info("comment permalink: https://www.reddit.com/r/{0}{1}".format(subreddit, str(comment.permalink(fast=True))))
                 for match in match_list: 
                     if type(match) == tuple:
                         for result in match:
@@ -95,7 +91,7 @@ while True:
                 if len(digit_list)>0: 
                     rv_list = get_numbered_eps() 
                     for ep in digit_list: 
-                        log("Matching episode: {0}".format(str(ep)))
+                        logging.info("Matching episode: {0}".format(str(ep)))
                         if ep=='troll':
                             real_list = get_all_eps()
                             reply_str+="["+real_list[351]["title"]+"]("+real_list[351]["link"]+")\n\n  "
@@ -122,8 +118,9 @@ while True:
                                 reply_str+="Episode " + str(ep) + " doesn't exist!\n\n " 
                 if len(reply_str)>0: 
                     reply_str+="-\n\n*I'm a bot. For more details see [this thread](https://www.reddit.com/r/MBMBAM/comments/62qi9c/reminder_you_can_use_the_mbmbamboto_to_quickly/).*"
-                    log("my reply:\n{0}".format(str(reply_str)))
+                    logging.info("my reply:\n{0}".format(str(reply_str)))
                     comment.reply(reply_str) 
+                    time.sleep(5) 
     except (Exception, RuntimeError) as e:
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
@@ -131,7 +128,5 @@ while True:
             err_log.write("Error at " + timestamp() + ":\n")
             err_log.write(str(type(e))+"\n"+str(e)+"\n"+str(exc_type)+"\nfile: "+str(fname)+"\nline number: "+str(exc_tb.tb_lineno))
             err_log.write("\n\n----------\n")
-        log("Something went wrong:\n{1}\n{2}\n{3}\nfile: {4}\nline number: {5}".format(str(timestamp()), str(type(e)), "\n", str(e), "\n", str(exc_type), "\nfile: ", str(fname), "\nline number: ", str(exc_tb.tb_lineno)))
+        logging.error("Something went wrong:\n{1}\n{2}\n{3}\nfile: {4}\nline number: {5}".format(str(timestamp()), str(type(e)), "\n", str(e), "\n", str(exc_type), "\nfile: ", str(fname), "\nline number: ", str(exc_tb.tb_lineno)))
         break
-    else:
-        time.sleep(5) 
