@@ -2,7 +2,7 @@
 subreddit='mbmbam'
 
 from datetime import datetime
-import os, sys, praw, time, urllib, feedparser, re, codecs
+import os, sys, praw, time, urllib, feedparser, re
 
 episode_pattern = re.compile(r"[eE][pP].?\ #?(\d+)|[eE]pisode\ #?(\d+)|\!(\d+)|(\!latest)|(\!last)|(\!recent)|(![tT]roll)|([tT]rolls?\ 2)|(\!TAZ)|(\!Tostino)|(\!Switch)|(\!noadvice)")
 
@@ -11,7 +11,7 @@ def timestamp():
     return '%02d-%02d-%02d at %02d:%02d:%02d' % (now.year, now.month, now.day, now.hour, now.minute, now.second) + ' -- '
 
 def log(x):
-    with codecs.open('logfile', 'a+', 'utf-8') as OF:
+    with open('logfile', 'a+') as OF:
     	msg = timestamp() + x
     	print msg
     	OF.write(msg + "\n")
@@ -68,14 +68,14 @@ log("Signed in as {0}".format(str(r.user.me())))
 while True:
     try:
         log("Beginning to listen for new comments")
-        with codecs.open('idfile', 'r+', 'utf-8') as id_file: 
+        with open('idfile', 'r+') as id_file: 
             id_file_string = id_file.read()
         id_file_list = id_file_string.split("\n") 
         full_comments = r.subreddit(subreddit).stream.comments()
         for comment in full_comments: 
             body = comment.body.encode('ascii', 'ignore')
             if str(comment.id) not in id_file_list and str(comment.author) != 'mbmbamboto': 
-                with codecs.open('idfile', 'r+', 'utf-8') as id_file: 
+                with open('idfile', 'a+') as id_file: 
                     id_file.write(str(comment.id)+"\n")
                 digit_list = [] 
                 reply_str = "" 
@@ -126,7 +126,7 @@ while True:
     except (Exception, RuntimeError) as e:
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        with codecs.open('errlog', 'a+', 'utf-8') as err_log:
+        with open('errlog', 'a+') as err_log:
             err_log.write("Error at " + timestamp() + ":\n")
             err_log.write(str(type(e))+"\n"+str(e)+"\n"+str(exc_type)+"\nfile: "+str(fname)+"\nline number: "+str(exc_tb.tb_lineno))
             err_log.write("\n\n----------\n")
