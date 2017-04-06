@@ -47,3 +47,91 @@ file: mbmbamboto.py
 line number: 75
 
 ----------
+Error at 2017-04-05 at 23:57:19 -- :
+<type 'exceptions.UnicodeEncodeError'>
+'ascii' codec can't encode character u'\u2014' in position 80: ordinal not in range(128)
+<type 'exceptions.UnicodeEncodeError'>
+file: mbmbamboto.py
+line number: 84
+
+----------
+Error at 2017-04-06 at 00:02:41 -- :
+<type 'exceptions.AttributeError'>
+'Comment' object has no attribute 'decode'
+<type 'exceptions.AttributeError'>
+file: mbmbamboto.py
+line number: 76
+
+----------
+Error at 2017-04-06 at 00:03:16 -- :
+<type 'exceptions.AttributeError'>
+'generator' object has no attribute 'decode'
+<type 'exceptions.AttributeError'>
+file: mbmbamboto.py
+line number: 74
+
+----------
+Error at 2017-04-06 at 00:07:06 -- :
+<type 'exceptions.UnicodeEncodeError'>
+'ascii' codec can't encode character u'\u2014' in position 80: ordinal not in range(128)
+<type 'exceptions.UnicodeEncodeError'>
+file: mbmbamboto.py
+line number: 81
+
+----------
+Error at 2017-04-06 at 00:08:54 -- :
+<type 'exceptions.UnicodeEncodeError'>
+'ascii' codec can't encode character u'\u2014' in position 80: ordinal not in range(128)
+<type 'exceptions.UnicodeEncodeError'>
+file: mbmbamboto.py
+line number: 84
+
+----------
+Error at 2017-04-06 at 00:10:30 -- :
+<type 'exceptions.UnicodeEncodeError'>
+'ascii' codec can't encode character u'\u2014' in position 80: ordinal not in range(128)
+<type 'exceptions.UnicodeEncodeError'>
+file: mbmbamboto.py
+line number: 84
+
+----------
+Error at 2017-04-06 at 00:12:14 -- :
+<type 'exceptions.UnicodeEncodeError'>
+'ascii' codec can't encode character u'\u2014' in position 80: ordinal not in range(128)
+<type 'exceptions.UnicodeEncodeError'>
+file: mbmbamboto.py
+line number: 84
+
+----------
+Error at 2017-04-06 at 00:17:24 -- :
+<type 'exceptions.UnicodeEncodeError'>
+'ascii' codec can't encode character u'\u2014' in position 80: ordinal not in range(128)
+<type 'exceptions.UnicodeEncodeError'>
+file: mbmbamboto.py
+line number: 84
+
+----------
+Error at 2017-04-06 at 00:22:44 -- :
+<type 'exceptions.UnicodeEncodeError'>
+'ascii' codec can't encode character u'\u201c' in position 41: ordinal not in range(128)
+<type 'exceptions.UnicodeEncodeError'>
+file: mbmbamboto.py
+line number: 76
+
+----------
+Error at 2017-04-06 at 00:37:00 -- :
+<type 'exceptions.UnicodeDecodeError'>
+'ascii' codec can't decode byte 0xe2 in position 124: ordinal not in range(128)
+<type 'exceptions.UnicodeDecodeError'>
+file: mbmbamboto.py
+line number: 85
+
+----------
+Error at 2017-04-06 at 00:40:55 -- :
+<type 'exceptions.NameError'>
+name 'ignore' is not defined
+<type 'exceptions.NameError'>
+file: mbmbamboto.py
+line number: 76
+
+----------
