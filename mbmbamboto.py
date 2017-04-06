@@ -81,6 +81,7 @@ while True:
                 reply_str = "" 
                 match_list = episode_pattern.findall(body)
                 if len(match_list) > 0:
+                    comment.upvote()
                     log("\n~~~~~~~~~~~~~\n")
                     log("comment {0}: \"{1}\"".format(str(comment.id), str(body)))
                     log("comment permalink: https://www.reddit.com/r/{0}{1}".format(subreddit, str(comment.permalink(fast=True))))
