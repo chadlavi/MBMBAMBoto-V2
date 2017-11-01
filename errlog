@@ -135,3 +135,771 @@ file: mbmbamboto.py
 line number: 76
 
 ----------
+Error at 2017-04-20 at 13:14:40 -- :
+<class 'prawcore.exceptions.Forbidden'>
+received 403 HTTP response
+<class 'prawcore.exceptions.Forbidden'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-06-02 at 20:51:03 -- :
+<class 'prawcore.exceptions.InvalidToken'>
+received 401 HTTP response
+<class 'prawcore.exceptions.InvalidToken'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-06-04 at 06:06:14 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-06-11 at 18:40:37 -- :
+<class 'prawcore.exceptions.InvalidToken'>
+received 401 HTTP response
+<class 'prawcore.exceptions.InvalidToken'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-06-14 at 02:30:34 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-06-17 at 15:30:53 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-06-28 at 02:31:05 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-01 at 15:00:39 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-14 at 05:00:11 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 504 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-14 at 05:26:26 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 504 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-14 at 06:41:57 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request ('Connection aborted.', error(104, 'Connection reset by peer'))
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-14 at 09:36:06 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request ('Connection aborted.', error(104, 'Connection reset by peer'))
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-15 at 10:30:46 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 09:14:26 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 13:47:55 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 13:48:30 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 13:49:07 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 13:52:48 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 13:53:44 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 13:54:28 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 13:56:59 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 13:58:44 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:01:13 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:02:03 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:03:14 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:04:44 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:05:43 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:06:01 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:06:38 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:07:26 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:08:28 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:09:46 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:11:19 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:11:56 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:12:33 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:13:22 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:15:03 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:17:36 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:18:48 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-16 at 14:19:50 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-17 at 19:56:46 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-07-19 at 02:33:35 -- :
+<type 'exceptions.UnicodeEncodeError'>
+'ascii' codec can't encode character u'\u201c' in position 13: ordinal not in range(128)
+<type 'exceptions.UnicodeEncodeError'>
+file: mbmbamboto.py
+line number: 121
+
+----------
+Error at 2017-08-26 at 06:07:55 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-08-26 at 06:09:32 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-08-26 at 08:06:27 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-08-26 at 08:07:59 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-08-26 at 08:51:25 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-08-26 at 15:56:05 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-08-26 at 20:52:31 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-17 at 13:48:45 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-18 at 17:20:18 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-18 at 17:21:01 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-18 at 17:30:06 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-21 at 06:22:03 -- :
+<class 'prawcore.exceptions.InvalidToken'>
+received 401 HTTP response
+<class 'prawcore.exceptions.InvalidToken'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-24 at 02:30:26 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-24 at 13:48:24 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-24 at 13:49:07 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-24 at 13:51:41 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-24 at 13:53:17 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-28 at 01:11:50 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request ('Connection aborted.', error(104, 'Connection reset by peer'))
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-29 at 01:40:02 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-29 at 01:43:39 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-29 at 02:20:32 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-09-30 at 05:21:44 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request ('Connection aborted.', error(104, 'Connection reset by peer'))
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-10-01 at 13:50:22 -- :
+<class 'prawcore.exceptions.RequestException'>
+error with request HTTPSConnectionPool(host='oauth.reddit.com', port=443): Read timed out. (read timeout=16.0)
+<class 'prawcore.exceptions.RequestException'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-10-03 at 00:49:10 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-10-17 at 23:03:08 -- :
+<class 'prawcore.exceptions.ServerError'>
+received 503 HTTP response
+<class 'prawcore.exceptions.ServerError'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-10-23 at 22:50:39 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-24 at 12:31:17 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-24 at 14:50:09 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-24 at 17:20:18 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-24 at 17:56:08 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-25 at 00:53:04 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-26 at 06:51:40 -- :
+<class 'prawcore.exceptions.InvalidToken'>
+received 401 HTTP response
+<class 'prawcore.exceptions.InvalidToken'>
+file: mbmbamboto.py
+line number: 71
+
+----------
+Error at 2017-10-26 at 17:29:21 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-26 at 17:31:43 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-28 at 00:24:15 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-28 at 02:07:02 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-29 at 21:38:26 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-30 at 04:13:55 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-30 at 21:17:41 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-30 at 23:27:10 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-31 at 15:59:30 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-10-31 at 22:02:45 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-11-01 at 02:59:36 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-11-01 at 03:09:16 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-11-01 at 03:10:07 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-11-01 at 03:16:01 -- :
+<class 'TypeError'>
+cannot use a string pattern on a bytes-like object
+<class 'TypeError'>
+file: mbmbamboto.py
+line number: 78
+
+----------
+Error at 2017-11-01 at 03:18:04 -- :
+<class 'AttributeError'>
+'str' object has no attribute 'decode'
+<class 'AttributeError'>
+file: mbmbamboto.py
+line number: 72
+
+----------
+Error at 2017-11-01 at 03:19:46 -- :
+<class 'TypeError'>
+'str' object is not callable
+<class 'TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-11-01 at 03:20:10 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-11-01 at 03:35:01 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-11-01 at 03:43:45 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-11-01 at 03:49:29 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-11-01 at 03:50:54 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
+Error at 2017-11-01 at 03:57:32 -- :
+<type 'exceptions.TypeError'>
+'unicode' object is not callable
+<type 'exceptions.TypeError'>
+file: mbmbamboto.py
+line number: 83
+
+----------
