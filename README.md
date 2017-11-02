@@ -14,6 +14,9 @@ Note that you'll need these pieces of info to set up the required `praw.ini` fil
 
 You can see an example of the required `praw.ini` file in the `example_praw.ini` file.
 
+## NOTES
+See [notes](notes.md) for TODOs and current design thinking on the bot.
+
 ## THANKS!  
 This is based on an original version of the bot written by Reddit user [/u/Quip_Qwop](https://bitbucket.org/Quip_Qwop/), which I updated to work with [praw 4.4.0](https://pypi.python.org/pypi/praw) and removed some secrets from, so it could be public.
 
