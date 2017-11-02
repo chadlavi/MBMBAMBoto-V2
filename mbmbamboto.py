@@ -1,8 +1,9 @@
+from datetime import datetime
+import os, sys, praw, time, urllib, feedparser, re, logging
+
 # SUBREDDIT-SPECIFIC VARIABLES
 subreddit = 'mbmbam'
 
-from datetime import datetime
-import os, sys, praw, time, urllib, feedparser, re, logging
 logging.basicConfig(filename = 'logfile', format = '%(asctime)s [%(levelname)s] %(message)s', level = logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler())
 
@@ -12,55 +13,30 @@ def timestamp():
     now = datetime.now()
     return '%02d-%02d-%02d at %02d:%02d:%02d' % (now.year, now.month, now.day, now.hour, now.minute, now.second) + ' -- '
 
-def is_int(n):
-    try:
-        int(n)
-        return True
-    except ValueError:
-        return False
-
-def is_empty_string(q):
-    if q is "":
-        return False
-    else:
-        return True
-
+# function to get the entire list of episodes
 def get_all_eps():
     feed = feedparser.parse("http://mbmbam.libsyn.com/rss")
-    item_lst = feed["items"]
-    main_ep_lst = []
-    for i in item_lst:
-        main_ep_lst.append(i)
-    return list(reversed(main_ep_lst))
+    episodes = feed["items"]
+    return list(reversed(episodes))
 
-def get_numbered_eps():
-    item_lst = get_all_eps()
-    main_ep_lst = []
-    for i in item_lst:
-        if len(re.findall(r"Me:|\d+:", i["title"])) > 0:
-            main_ep_lst.append(i)
-    return main_ep_lst
-
-def pick_ep(result):
-    logging.info("result: {0}".format(str(result)))
-    if is_int(result):
-        digit_list.append(str(abs(int(result))))
-    elif result in ("!recent", "!last", "!latest"):
-        feed = get_all_eps()
-        digit_list.append('#'+str(len(feed)))
-    elif result == "!TAZ":
-        digit_list.append('taz')
-    elif result == "!Switch":
-        digit_list.append('switch')
-    elif result == "!Tostino":
-        digit_list.append('tostino')
-    elif result == "!noadvice":
-        digit_list.append(259)
-    elif re.search(r"\!?[tT]roll", result):
-        digit_list.append('troll')
+# function to find specific episodes based on a passed keyword, which is treated differently depending on if it is numeric or not
+def get_specific_ep(keyword):
+    matches_list = []
+    for i in get_all_eps():
+        if re.match(r"^[0-9]+$", str(keyword)):
+            if re.match(r"^[1-9]$", str(keyword)):
+                keyword = "0" + keyword
+            if re.findall(r"[^0-9]"+str(keyword)+r"\.mp3", i["links"][1]["href"]):
+                matches_list.append('[{}]({})'.format(i["title"], i["links"][1]["href"]))
+        else:
+            if re.findall(re.escape(str(keyword)), i["title"], re.IGNORECASE):
+                matches_list.append('[{}]({})'.format(i["title"], i["links"][1]["href"]))
+    return matches_list
 
 r = praw.Reddit('bot')
+
 logging.info("Signed in as {0}".format(str(r.user.me())))
+
 while True:
     try:
         logging.info("Beginning to listen for new comments")
@@ -69,56 +45,37 @@ while True:
         id_file_list = id_file_string.split("\n")
         full_comments = r.subreddit(subreddit).stream.comments()
         for comment in full_comments:
-            body = comment.body.encode('ascii', 'ignore')
+            body = str(comment.body.encode('ascii', 'ignore'))
+            # If the comment hasn't been checked and the author is not the bot, add the ID to the idfile and check for pattern matches in the comment body
             if str(comment.id) not in id_file_list and str(comment.author) != 'mbmbamboto':
                 with open('idfile', 'a+') as id_file:
+                    # comment out the following line when debugging
                     id_file.write(str(comment.id)+"\n")
                 digit_list = []
                 reply_str = ""
                 match_list = episode_pattern.findall(body)
+                # If there are matches, upvote the comment and find matching episode links
                 if len(match_list) > 0:
+                    # comment out the following line when debugging
                     comment.upvote()
                     logging.info("\n\n~~~~~~~~~~~~~\n")
-                    logging.info("comment {0}: \"{1}\"".format(str(comment.id), str(body)))
+                    logging.info("comment {0}: \"{1}\"".format(str(comment.id), body))
                     logging.info("comment permalink: https://www.reddit.com/r/%s%s", str(subreddit), str(comment.permalink))
                 for match in match_list:
                     if type(match) == tuple:
                         for result in match:
                             if len(result) > 0:
-                                pick_ep(result)        
+                                for link in get_specific_ep(result):
+                               	    reply_str += link
                     else:
-                        pick_ep(match)
-                if len(digit_list)>0:
-                    rv_list = get_numbered_eps()
-                    for ep in digit_list:
-                        logging.info("Matching episode: {0}".format(str(ep)))
-                        if ep == 'troll':
-                            real_list = get_all_eps()
-                            reply_str += "["+real_list[351]["title"]+"]("+real_list[351]["link"]+")\n\n  "
-                        elif ep == 'tostino':
-                            real_list = get_all_eps()
-                            reply_str += "["+real_list[262]["title"]+"]("+real_list[262]["link"]+")\n\n  "
-                        elif ep == 'switch':
-                            real_list = get_all_eps()
-                            reply_str += "["+real_list[273]["title"]+"]("+real_list[273]["link"]+")\n\n  "
-                        elif ep == 'taz':
-                            real_list = get_all_eps()
-                            reply_str += "["+real_list[213]["title"]+"]("+real_list[213]["link"]+")\n\n  "
-                        elif re.search("#",ep):
-                            ep = int(ep.replace('#',''))-1
-                            real_list = get_all_eps()
-                            reply_str += "["+real_list[ep]["title"]+"]("+real_list[ep]["link"]+")\n\n  "
-                        else:
-                            try:
-                                if int(ep) == 420 or int(ep) == 69:
-                                    reply_str += "Nice. [" + rv_list[abs(int(ep))-1]["title"] + "](" + rv_list[abs(int(ep))-1]["link"]+")\n\n "
-                                else:
-                                    reply_str += "[" + rv_list[abs(int(ep))-1]["title"] + "](" + rv_list[abs(int(ep))-1]["link"]+")\n\n "
-                            except IndexError:
-                                reply_str += "Episode " + str(ep) + " doesn't exist!\n\n "
+                        for link in get_specific_ep(match):
+                            reply_str += link
+
+                # If there are reply items, comment them
                 if len(reply_str)>0:
-                    reply_str += "-\n\n*I'm a bot. For more details see [this thread](https://www.reddit.com/r/MBMBAM/comments/62qi9c/reminder_you_can_use_the_mbmbamboto_to_quickly/).*"
+                    reply_str += "\n\n*I'm a bot. For more details see [this thread](https://www.reddit.com/r/MBMBAM/comments/62qi9c/reminder_you_can_use_the_mbmbamboto_to_quickly/).*"
                     logging.info("my reply:\n{0}".format(str(reply_str)))
+                    # comment out the following line when debugging
                     comment.reply(reply_str)
                     time.sleep(5)
     except (Exception, RuntimeError) as e:
